@@ -4,12 +4,15 @@ import { JsonLd } from "./JsonLd";
 export const dynamic = "force-dynamic";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://radiation-office.fr";
+const phoneDisplay = "01 71 68 15 38";
+const phoneHref = "tel:+33171681538";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "radiation-office.fr",
   url: siteUrl,
+  telephone: "+33171681538",
   areaServed: {
     "@type": "Country",
     name: "France",
@@ -147,6 +150,9 @@ export default function HomePage() {
             <a href="#pieces">Pièces</a>
             <a href="#faq">FAQ</a>
             <a href="#contact">Diagnostic</a>
+            <a className="nav-phone" href={phoneHref}>
+              Appeler
+            </a>
           </nav>
         </div>
       </header>
@@ -168,6 +174,9 @@ export default function HomePage() {
                 </a>
                 <a className="btn secondary" href="#methode">
                   Voir la méthode
+                </a>
+                <a className="btn phone" href={phoneHref} aria-label={`Appeler radiation-office.fr au ${phoneDisplay}`}>
+                  {phoneDisplay}
                 </a>
               </div>
               <div className="fact-row" aria-label="Repères clés">
@@ -286,6 +295,12 @@ export default function HomePage() {
                 </div>
               </article>
             </div>
+            <div className="method-cta" aria-label="Contact rapide">
+              <p>Besoin de savoir si votre dossier passe par M2, P2 ou le juge commis ?</p>
+              <a className="btn light" href={phoneHref} aria-label={`Appeler maintenant au ${phoneDisplay}`}>
+                Appeler le {phoneDisplay}
+              </a>
+            </div>
           </div>
         </section>
 
@@ -308,7 +323,17 @@ export default function HomePage() {
               </div>
             </div>
 
-            <ContactForm />
+            <div className="contact-stack">
+              <ContactForm />
+              <aside className="phone-card" aria-label="Contact par téléphone">
+                <span className="tag">Réponse rapide</span>
+                <h2>Parler à quelqu'un</h2>
+                <p>Pour une radiation récente, un extrait confus ou une urgence greffe, appelez directement.</p>
+                <a className="btn" href={phoneHref} aria-label={`Appeler radiation-office.fr au ${phoneDisplay}`}>
+                  {phoneDisplay}
+                </a>
+              </aside>
+            </div>
           </div>
         </section>
 
@@ -364,6 +389,12 @@ export default function HomePage() {
               <span>radiation-office.fr</span>
             </a>
             <p className="microcopy">Sources publiques vérifiées le 27 avril 2026. À relire juridiquement avant mise en production.</p>
+            <p className="footer-phone">
+              Diagnostic téléphone :{" "}
+              <a href={phoneHref} aria-label={`Appeler radiation-office.fr au ${phoneDisplay}`}>
+                {phoneDisplay}
+              </a>
+            </p>
           </div>
           <div className="sources" aria-label="Sources officielles et pratiques">
             <a href="https://entreprendre.service-public.gouv.fr/vosdroits/F24023">Service-Public</a>

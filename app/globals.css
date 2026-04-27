@@ -207,6 +207,12 @@ header {
   background: var(--white);
 }
 
+.nav-phone {
+  border-color: var(--line) !important;
+  background: var(--ink);
+  color: var(--paper);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -231,6 +237,15 @@ header {
 }
 
 .btn.secondary {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.btn.phone {
+  background: var(--accent-2);
+}
+
+.btn.light {
   background: var(--paper);
   color: var(--ink);
 }
@@ -507,6 +522,23 @@ h2 {
   color: var(--ink);
 }
 
+.method-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  border: 2px solid var(--paper);
+  padding: 1rem;
+  background: #20201d;
+}
+
+.method-cta p {
+  margin: 0;
+  color: var(--paper);
+  font-weight: 800;
+}
+
 .step-main p,
 .step-meta p {
   margin-bottom: 0;
@@ -581,6 +613,28 @@ h2 {
   border: 3px solid var(--line);
   background: var(--soft);
   padding: 1.15rem;
+}
+
+.contact-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.phone-card {
+  border: 3px solid var(--line);
+  background: var(--white);
+  padding: 1.15rem;
+}
+
+.phone-card h2 {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1;
+  margin-bottom: .65rem;
+}
+
+.phone-card p {
+  color: var(--muted);
+  font-weight: 620;
 }
 
 .form-box h2 {
@@ -745,6 +799,15 @@ footer {
   font-weight: 700;
 }
 
+.footer-phone {
+  margin: .8rem 0 0;
+  font-weight: 850;
+}
+
+.footer-phone a {
+  color: var(--accent-2);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -782,6 +845,11 @@ footer {
     border: 2px solid var(--line);
     background: var(--white);
     padding: .85rem .9rem;
+  }
+
+  .nav-phone {
+    background: var(--ink) !important;
+    color: var(--paper);
   }
 
   .menu-button {
@@ -834,6 +902,11 @@ footer {
     max-width: 11ch;
     line-height: 1.02;
   }
+
+  .method-cta {
+    align-items: stretch;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 560px) {
@@ -854,7 +927,9 @@ footer {
   }
 
   .hero-actions .btn,
-  .form-box .btn {
+  .form-box .btn,
+  .phone-card .btn,
+  .method-cta .btn {
     width: 100%;
   }
 
