@@ -6,6 +6,8 @@ export const dynamic = "force-dynamic";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://radiation-office.fr";
 const phoneDisplay = "01 71 68 15 38";
 const phoneHref = "tel:+33171681538";
+const phoneLabel = "Numéro Azur non surtaxé";
+const phonePrice = "Service gratuit + prix d'un appel";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -151,7 +153,7 @@ export default function HomePage() {
             <a href="#faq">FAQ</a>
             <a href="#contact">Diagnostic</a>
             <a className="nav-phone" href={phoneHref}>
-              Appeler
+              Numéro Azur
             </a>
           </nav>
         </div>
@@ -176,9 +178,11 @@ export default function HomePage() {
                   Voir la méthode
                 </a>
                 <a className="btn phone" href={phoneHref} aria-label={`Appeler radiation-office.fr au ${phoneDisplay}`}>
-                  {phoneDisplay}
+                  <span>{phoneDisplay}</span>
+                  <small>{phoneLabel}</small>
                 </a>
               </div>
+              <p className="phone-reassurance">{phonePrice}</p>
               <div className="fact-row" aria-label="Repères clés">
                 <div className="fact">
                   <strong>3 mois</strong>
@@ -298,7 +302,8 @@ export default function HomePage() {
             <div className="method-cta" aria-label="Contact rapide">
               <p>Besoin de savoir si votre dossier passe par M2, P2 ou le juge commis ?</p>
               <a className="btn light" href={phoneHref} aria-label={`Appeler maintenant au ${phoneDisplay}`}>
-                Appeler le {phoneDisplay}
+                <span>Appeler le {phoneDisplay}</span>
+                <small>{phoneLabel}</small>
               </a>
             </div>
           </div>
@@ -330,8 +335,10 @@ export default function HomePage() {
                 <h2>Parler à quelqu'un</h2>
                 <p>Pour une radiation récente, un extrait confus ou une urgence greffe, appelez directement.</p>
                 <a className="btn" href={phoneHref} aria-label={`Appeler radiation-office.fr au ${phoneDisplay}`}>
-                  {phoneDisplay}
+                  <span>{phoneDisplay}</span>
+                  <small>{phoneLabel}</small>
                 </a>
+                <p className="phone-price">{phonePrice}</p>
               </aside>
             </div>
           </div>
@@ -390,13 +397,16 @@ export default function HomePage() {
             </a>
             <p className="microcopy">Sources publiques vérifiées le 27 avril 2026. À relire juridiquement avant mise en production.</p>
             <p className="footer-phone">
-              Diagnostic téléphone :{" "}
+              Diagnostic téléphone, {phoneLabel.toLowerCase()} :{" "}
               <a href={phoneHref} aria-label={`Appeler radiation-office.fr au ${phoneDisplay}`}>
                 {phoneDisplay}
               </a>
+              <span>{phonePrice}</span>
             </p>
           </div>
           <div className="sources" aria-label="Sources officielles et pratiques">
+            <a href="/mentions-legales">Mentions légales</a>
+            <a href="/politique-confidentialite">Politique de confidentialité</a>
             <a href="https://entreprendre.service-public.gouv.fr/vosdroits/F24023">Service-Public</a>
             <a href="https://entreprendre.service-public.gouv.fr/vosdroits/R66233">M2 société</a>
             <a href="https://entreprendre.service-public.gouv.fr/vosdroits/R66234">P2 personne physique</a>
