@@ -1,4 +1,5 @@
 import { ContactForm } from "./ContactForm";
+import { FaqAccordion } from "./FaqAccordion";
 import { JsonLd } from "./JsonLd";
 
 export const dynamic = "force-dynamic";
@@ -374,14 +375,7 @@ export default function HomePage() {
                 officielles utilisent réellement.
               </p>
             </div>
-            <div className="faq-list">
-              {faqItems.map((item) => (
-                <details className="faq-item" key={item.question}>
-                  <summary>{item.question}</summary>
-                  <p>{item.answer}</p>
-                </details>
-              ))}
-            </div>
+            <FaqAccordion items={faqItems} />
           </div>
         </section>
       </main>

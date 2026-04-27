@@ -762,56 +762,99 @@ textarea {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+  align-items: start;
 }
 
 .faq-item {
   border: 2px solid var(--line);
   background: var(--white);
-  min-height: 100%;
 }
 
-.faq-item summary {
+.faq-item h3 {
+  margin: 0;
+}
+
+.faq-item button {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 34px;
   gap: 1rem;
   align-items: center;
+  width: 100%;
   min-height: 72px;
   padding: 1rem;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
   font-size: 1.05rem;
   font-weight: 900;
   line-height: 1.18;
+  text-align: left;
   cursor: pointer;
-  list-style: none;
 }
 
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-item summary::after {
-  content: "+";
+.faq-icon {
+  position: relative;
   display: grid;
   place-items: center;
   width: 34px;
   height: 34px;
   border: 2px solid var(--line);
   background: var(--paper);
-  font-size: 1.35rem;
-  line-height: 1;
 }
 
-.faq-item[open] summary {
+.faq-icon::before,
+.faq-icon::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 3px;
+  background: var(--ink);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform .2s ease, opacity .2s ease, background .2s ease;
+}
+
+.faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-item[data-open="true"] button {
   border-bottom: 2px solid var(--line);
   background: var(--soft);
 }
 
-.faq-item[open] summary::after {
-  content: "-";
+.faq-item[data-open="true"] .faq-icon {
   background: var(--ink);
-  color: var(--paper);
 }
 
-.faq-item p {
+.faq-item[data-open="true"] .faq-icon::before,
+.faq-item[data-open="true"] .faq-icon::after {
+  background: var(--paper);
+}
+
+.faq-item[data-open="true"] .faq-icon::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(0);
+}
+
+.faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows .24s ease;
+}
+
+.faq-panel-inner {
+  min-height: 0;
+}
+
+.faq-item[data-open="true"] .faq-panel {
+  grid-template-rows: 1fr;
+}
+
+.faq-panel p {
   margin: 0;
   padding: 1rem;
   color: var(--muted);
