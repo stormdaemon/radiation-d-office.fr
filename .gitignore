@@ -1,0 +1,13 @@
+.next
+node_modules
+out
+dist
+.env
+.env*.local
+bun.lockb
+*.tsbuildinfo
+audit-*.png
+next-audit-*.png
+next-faq-*.png
+next-dev*.log
+index.html
