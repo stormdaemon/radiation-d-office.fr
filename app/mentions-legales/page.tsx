@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+
+const logoUrl = "https://res.cloudinary.com/dgjsq5fnl/image/upload/v1777312270/logo_boal2e.png";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
@@ -17,7 +20,7 @@ export default function LegalNoticePage() {
         <div className="shell nav legal-nav">
           <Link className="brand" href="/" aria-label="radiation-office.fr accueil">
             <span className="brand-mark" aria-hidden="true">
-              R
+              <Image src={logoUrl} alt="" width={38} height={38} priority />
             </span>
             <span>radiation-office.fr</span>
           </Link>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ContactForm } from "./ContactForm";
 import { FaqAccordion } from "./FaqAccordion";
 import { JsonLd } from "./JsonLd";
@@ -9,6 +10,7 @@ const phoneDisplay = "01 71 68 15 38";
 const phoneHref = "tel:+33171681538";
 const phoneLabel = "Numéro Azur non surtaxé";
 const phonePrice = "Service gratuit + prix d'un appel";
+const logoUrl = "https://res.cloudinary.com/dgjsq5fnl/image/upload/v1777312270/logo_boal2e.png";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -138,7 +140,7 @@ export default function HomePage() {
           <div className="nav-top">
             <a className="brand" href="#" aria-label="radiation-office.fr accueil">
               <span className="brand-mark" aria-hidden="true">
-                R
+                <Image src={logoUrl} alt="" width={38} height={38} priority />
               </span>
               <span>radiation-office.fr</span>
             </a>
@@ -385,7 +387,7 @@ export default function HomePage() {
           <div>
             <a className="brand" href="#" aria-label="radiation-office.fr accueil bas de page">
               <span className="brand-mark" aria-hidden="true">
-                R
+                <Image src={logoUrl} alt="" width={38} height={38} />
               </span>
               <span>radiation-office.fr</span>
             </a>
