@@ -391,7 +391,7 @@ export default function HomePage() {
               </span>
               <span>radiation-office.fr</span>
             </a>
-            <p className="microcopy">Sources publiques vérifiées le 27 avril 2026. À relire juridiquement avant mise en production.</p>
+            <p className="microcopy">Sources publiques vérifiées le 27 avril 2026. Service édité par FIDESLEG.</p>
             <p className="footer-phone">
               Diagnostic téléphone, {phoneLabel.toLowerCase()} :{" "}
               <a href={phoneHref} aria-label={`Appeler radiation-office.fr au ${phoneDisplay}`}>
