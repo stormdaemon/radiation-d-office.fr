@@ -50,10 +50,15 @@ export default function BlogIndexPage() {
             </span>
             <span>radiation-office.fr</span>
           </Link>
-          <a className="btn phone compact" href="tel:+33171681538">
-            <span>01 71 68 15 38</span>
-            <small>Numéro Azur non surtaxé</small>
-          </a>
+          <div className="blog-nav-actions">
+            <Link className="btn secondary compact" href="/">
+              Accueil
+            </Link>
+            <a className="btn phone compact" href="tel:+33171681538">
+              <span>01 71 68 15 38</span>
+              <small>Numéro Azur non surtaxé</small>
+            </a>
+          </div>
         </div>
       </header>
 
@@ -62,7 +67,7 @@ export default function BlogIndexPage() {
           <div className="shell blog-hero-grid">
             <div>
               <p className="eyebrow">Blog radiation d'office</p>
-              <h1>RCS, RNE, Kbis radié : les guides qui évitent les mauvais dépôts</h1>
+              <h1 className="blog-index-title">RCS, RNE, Kbis radié : les guides qui évitent les mauvais dépôts</h1>
               <p className="lead">
                 Des articles directs, sourcés et pensés pour les dirigeants qui doivent comprendre vite une radiation
                 d'office, choisir entre M2, P2 ou juge commis, et éviter les allers-retours avec le greffe.
