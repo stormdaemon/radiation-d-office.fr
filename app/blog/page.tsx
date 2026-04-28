@@ -82,7 +82,7 @@ export default function BlogIndexPage() {
                 </Link>
               </div>
             </div>
-            <aside className="blog-index-panel" aria-label="Angles SEO du blog">
+            <aside className="blog-index-panel" aria-label="Sujets couverts par le blog">
               <strong>10 guides</strong>
               <span>radiation d'office, rapport, M2, P2, RCS, RNE, Kbis, siège social, bénéficiaires effectifs.</span>
             </aside>
@@ -93,7 +93,7 @@ export default function BlogIndexPage() {
           <div className="shell">
             <div className="section-title">
               <h2 id="articles-title">Tous les articles</h2>
-              <p>Chaque page cible une intention de recherche précise et renvoie vers les démarches utiles.</p>
+              <p>Des guides courts pour passer du constat au bon dossier, sans jargon inutile.</p>
             </div>
             <div className="blog-card-grid">
               {blogArticles.map((article) => (
@@ -106,7 +106,6 @@ export default function BlogIndexPage() {
                     <Link href={`/blog/${article.slug}`}>{article.title}</Link>
                   </h3>
                   <p>{article.description}</p>
-                  <div className="blog-keyword">Mot-clé : {article.keyword}</div>
                   <Link className="blog-card-link" href={`/blog/${article.slug}`}>
                     Lire le guide
                   </Link>

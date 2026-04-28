@@ -357,14 +357,14 @@ export default function HomePage() {
             </div>
             <div className="seo-copy">
               <p>
-                Dans les recherches, les dirigeants tapent souvent “levée de radiation d'office”, “annuler radiation
-                RCS”, “société radiée d'office que faire” ou “réactiver Kbis radié”. Administrativement, les termes
-                les plus précis sont “rapport d'une radiation d'office” et “suppression de la mention de radiation
-                d'office”.
+                “Levée de radiation d'office” est une expression courante, mais ce n'est pas toujours le terme employé
+                dans les démarches. Administrativement, les formulations les plus précises sont “rapport d'une
+                radiation d'office” et “suppression de la mention de radiation d'office”.
               </p>
               <p>
-                La page vise donc les intentions de recherche urgentes sans promettre une réouverture automatique :
-                comprendre le motif, corriger la situation, puis déposer le formulaire ou la requête adaptée.
+                Le bon réflexe consiste à partir du motif inscrit au registre, à corriger la situation, puis à déposer
+                le formulaire ou la requête adaptée. Pas de réouverture automatique promise, seulement un dossier plus
+                clair.
               </p>
             </div>
           </div>

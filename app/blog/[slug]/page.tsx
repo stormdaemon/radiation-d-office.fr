@@ -145,7 +145,6 @@ export default async function BlogArticlePage({ params }: ArticlePageProps) {
               </div>
               <h1>{article.title}</h1>
               <p className="lead">{article.hero}</p>
-              <div className="blog-keyword wide">Mot-clé ciblé : {article.keyword}</div>
             </div>
           </section>
 
