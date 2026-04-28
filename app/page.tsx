@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ContactForm } from "./ContactForm";
 import { FaqAccordion } from "./FaqAccordion";
 import { JsonLd } from "./JsonLd";
@@ -154,6 +155,7 @@ export default function HomePage() {
             <a href="#methode">Méthode</a>
             <a href="#pieces">Pièces</a>
             <a href="#faq">FAQ</a>
+            <Link href="/blog">Blog</Link>
             <a href="#contact">Diagnostic</a>
             <a className="nav-phone" href={phoneHref}>
               Numéro Azur
@@ -401,8 +403,9 @@ export default function HomePage() {
             </p>
           </div>
           <div className="sources" aria-label="Sources officielles et pratiques">
-            <a href="/mentions-legales">Mentions légales</a>
-            <a href="/politique-confidentialite">Politique de confidentialité</a>
+            <Link href="/mentions-legales">Mentions légales</Link>
+            <Link href="/politique-confidentialite">Politique de confidentialité</Link>
+            <Link href="/blog">Blog</Link>
             <a href="https://entreprendre.service-public.gouv.fr/vosdroits/F24023">Service-Public</a>
             <a href="https://entreprendre.service-public.gouv.fr/vosdroits/R66233">M2 société</a>
             <a href="https://entreprendre.service-public.gouv.fr/vosdroits/R66234">P2 personne physique</a>
